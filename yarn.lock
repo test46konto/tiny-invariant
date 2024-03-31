@@ -1404,10 +1404,10 @@ exit@^0.1.2:
   resolved "https://registry.yarnpkg.com/exit/-/exit-0.1.2.tgz#0632638f8d877cc82107d30a0fff1a17cba1cd0c"
   integrity sha512-Zk/eNKV2zbjpKzrsQ+n1G6poVbErQxJ0LBOJXaKZ1EViLzH+hrLu9cdXI4zw9dBQJslwBEpbQ2P1oS7nDxs6jQ==
 
-expect-type@^0.18.0:
-  version "0.18.0"
-  resolved "https://registry.yarnpkg.com/expect-type/-/expect-type-0.18.0.tgz#16f62ff9d04950d7d286ed9179a52bc3ea366f2b"
-  integrity sha512-xjKoyyDLoia2h1WF+vwV8AmEpQ0drGW0InRgyywAHyOC+XSPYMxGoMXSwPjXs46D8FgLmp32sHMd1KrVingDuQ==
+expect-type@^0.19.0:
+  version "0.19.0"
+  resolved "https://registry.yarnpkg.com/expect-type/-/expect-type-0.19.0.tgz#72eca0ea90f34fa793c70f44adc1974c0e031914"
+  integrity sha512-piv9wz3IrAG4Wnk2A+n2VRCHieAyOSxrRLU872Xo6nyn39kYXKDALk4OcqnvLRnFvkz659CnWC8MWZLuuQnoqg==
 
 expect@^29.0.0, expect@^29.7.0:
   version "29.7.0"
