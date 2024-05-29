@@ -1,0 +1,8 @@
+// @flow
+
+declare module "tiny-invariant" {
+  declare export default function invariant(
+    condition: mixed,
+    message?: string | (() => string),
+  ): boolean;
+}
