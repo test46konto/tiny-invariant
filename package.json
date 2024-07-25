@@ -27,6 +27,13 @@
         "types": "./dist/tiny-invariant.d.ts",
         "default": "./dist/tiny-invariant.cjs.js"
       }
+    },
+    "./keep-messages": {
+      "import": "./dist/esm/tiny-invariant-keep-messages.js",
+      "default": {
+        "types": "./dist/tiny-invariant-keep-messages.d.ts",
+        "default": "./dist/tiny-invariant-keep-messages.cjs.js"
+      }
     }
   },
   "sideEffects": false,
@@ -51,6 +58,23 @@
       "path": "dist/tiny-invariant.esm.js",
       "import": "foo",
       "limit": "112B"
+    },
+    {
+      "path": "dist/tiny-invariant-keep-messages.min.js",
+      "limit": "251B"
+    },
+    {
+      "path": "dist/tiny-invariant-keep-messages.js",
+      "limit": "267B"
+    },
+    {
+      "path": "dist/tiny-invariant-keep-messages.cjs.js",
+      "limit": "171B"
+    },
+    {
+      "path": "dist/tiny-invariant-keep-messages.esm.js",
+      "import": "foo",
+      "limit": "112B"
     }
   ],
   "scripts": {
@@ -61,9 +85,9 @@
     "typescript:check": "tsc --noEmit",
     "validate": "yarn prettier:check && yarn typescript:check",
     "build:clean": "rimraf dist",
-    "build:flow": "cp src/tiny-invariant.js.flow dist/tiny-invariant.cjs.js.flow",
-    "build:typescript": "tsc ./src/tiny-invariant.ts --emitDeclarationOnly --declaration --outDir ./dist",
-    "build:typescript:esm": "tsc ./src/tiny-invariant.ts --emitDeclarationOnly --declaration --outDir ./dist/esm",
+    "build:flow": "cp src/tiny-invariant.js.flow dist/tiny-invariant.cjs.js.flow && cp src/tiny-invariant-keep-messages.js.flow dist/tiny-invariant-keep-messages.cjs.js.flow",
+    "build:typescript": "tsc ./src/tiny-invariant.ts ./src/tiny-invariant-keep-messages.ts --emitDeclarationOnly --declaration --outDir ./dist",
+    "build:typescript:esm": "tsc ./src/tiny-invariant.ts ./src/tiny-invariant-keep-messages.ts --emitDeclarationOnly --declaration --outDir ./dist/esm",
     "build:dist": "yarn rollup --config rollup.config.mjs",
     "build": "yarn build:clean && yarn build:dist && yarn build:typescript && yarn build:typescript:esm",
     "prepublishOnly": "yarn build"
