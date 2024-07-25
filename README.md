@@ -102,7 +102,25 @@ if (!condition) {
 ```
 
 - rollup: use [rollup-plugin-replace](https://github.com/rollup/rollup-plugin-replace) and set `NODE_ENV` to `production` and then `rollup` will treeshake out the unused code
-- Webpack: [instructions](https://webpack.js.org/guides/production/#specify-the-mode)
+- Webpack: [instructions](https://webpack.js.org/guides/production/#specify-the-mode) 
+
+## Using `tiny-invariant/keep-messages`
+
+For cases where you need the invariant messages to be available in production, you can import the keep-messages version of the library. This can be useful if you are using a monitoring system like Sentry to capture error messages in production environments. Note that this will result in slightly larger bundles due to the inclusion of the messages.
+
+```ts
+import invariant from 'tiny-invariant/keep-messages';
+
+invariant(condition, 'This message will be available in production');
+// In production: Error('Invariant violation: This message will be available in production')
+```
+
+```ts
+import invariant from 'tiny-invariant';
+
+invariant(condition, 'This message will be not available in production');
+// In production: Error('Invariant violation')
+```
 
 ## Builds
 
